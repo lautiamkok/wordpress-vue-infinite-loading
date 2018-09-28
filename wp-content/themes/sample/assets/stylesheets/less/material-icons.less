@@ -1,0 +1,67 @@
+/**
+ * ===============================================================
+ * Material Icons
+ * ===============================================================
+ */
+
+.material-icons {
+    /**
+     * To fix material icon not align with text.
+     * https://github.com/google/material-design-icons/issues/206
+     */
+    vertical-align: middle;
+
+    padding: 0;
+    margin: 0;
+
+    &.large {
+        font-size: 32px;
+    }
+
+    &.small {
+        font-size: 18px;
+    }
+
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('@{path-dist-font}/MaterialIcons-Regular.eot'); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url('@{path-dist-font}/MaterialIcons-Regular.woff2') format('woff2'),
+    url('@{path-dist-font}/MaterialIcons-Regular.woff') format('woff'),
+    url('@{path-dist-font}/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    // display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+
+    &.md-80 {
+        font-size:80px;
+        line-height: 20px;
+    }
+}

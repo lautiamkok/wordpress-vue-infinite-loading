@@ -1,0 +1,4054 @@
+/**
+ * ===============================================================
+ * Base - functions
+ * ===============================================================
+ */
+/**
+ * Add box shadow.
+ * @param  {[type]} @size: 0             [description]
+ * @param  {[type]} @r:0   [description]
+ * @param  {[type]} @g:0   [description]
+ * @param  {[type]} @b:0   [description]
+ * @param  {[type]} @a:1   [description]
+ * @return {[type]}        [description]
+ */
+/**
+ * Adding animation.
+ * @param  {[type]} @speed: 0.25s         [description]
+ * @return {[type]}         [description]
+ */
+/**
+ * Adding fade in out effect on hover, etc.
+ * https://css-tricks.com/almanac/properties/t/transition/
+ * @param  {[type]} $property: all         [description]
+ * @param  {[type]} $time:     1s            [description]
+ * @param  {[type]} $method:   ease-in-out   [description]
+ * @return {[type]}            [description]
+ */
+/**
+ * Make opacity.
+ * https://css-tricks.com/snippets/css/useful-css3-less-mixins/
+ */
+/**
+ * Center element vertically & horizontally.
+ */
+/**
+ * Left vertical center.
+ * http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+ */
+/**
+ * Right vertical center.
+ */
+/**
+ * Rotate an elemnent.
+ * https://css-tricks.com/snippets/css/useful-css3-less-mixins/
+ * https://stackoverflow.com/questions/12960249/rotate-text-by-using-less
+ */
+/**
+ * ===============================================================
+ * Classes that use the functions above
+ * ===============================================================
+ */
+@import 'icons.css';
+@import 'font-face.css';
+@import '../../node_modules/foundation-sites/dist/css/foundation.min.css';
+@import '../../node_modules/foundation-icon-fonts/foundation-icons.css';
+@import '../../node_modules/jquery-ui-bundle/jquery-ui.min.css';
+@import '../../node_modules/swiper/dist/css/swiper.min.css';
+@import '../../node_modules/aos/dist/aos.css';
+.center-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.vertical-center-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+}
+.vertical-center-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+}
+.overlay-fullsize {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+/**
+ * ===============================================================
+ * Guide
+ * ===============================================================
+ */
+/**
+ * ===============================================================
+ * Variables
+ * ===============================================================
+ */
+/**
+ * Fonts
+ */
+/**
+ * Paths
+ */
+/**
+ * Grey shades
+ * https://www.w3schools.com/colors/colors_shades.asp
+ */
+/**
+ * Theme colour - green
+ */
+/**
+ * ===============================================================
+ * Dependencies
+ * ===============================================================
+ */
+/**
+ * ===============================================================
+ * Global
+ * ===============================================================
+ */
+html,
+body {
+  position: relative;
+}
+body {
+  color: #000000;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 16px;
+  background-color: #3B3B3B;
+}
+header,
+main {
+  background-color: #ffffff;
+}
+main {
+  min-height: 100vh;
+}
+p {
+  font-size: 1em;
+  margin-bottom: 25px;
+}
+p:last-child {
+  margin: 0 !important;
+}
+a {
+  -webkit-transition: color 0.5s;
+  /* Safari */
+  transition: color 0.5s;
+}
+a:hover {
+  color: #19ADBC;
+}
+.button-reset {
+  margin-left: 20px;
+  color: #19ADBC !important;
+  font-weight: 700;
+}
+.button.button-enquiry {
+  font-weight: 500;
+  color: #19ADBC;
+  border-color: #19ADBC;
+  border-width: 2px;
+  text-align: left;
+}
+.button.button-enquiry .container-text {
+  margin-bottom: 5px;
+  line-height: 24px;
+  /**
+         * Float flex item to left and right.
+         * https://stackoverflow.com/questions/22429003/how-to-right-align-flex-item
+         */
+  justify-content: space-between;
+}
+.button.button-enquiry .grey-light {
+  display: block;
+  text-align: left;
+  color: #A0A0A0;
+  font-size: 16px;
+  line-height: 20px;
+}
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+  /**
+     * Change container size on xxlarge screen.
+     */
+  .grid-container {
+    max-width: 90rem;
+  }
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+  .for-andrew .grid-container {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .grid-container:not(.full-height) {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .button-enquiry {
+    width: 60% !important;
+  }
+  .button-enquiry .container-text .text {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  p {
+    font-size: 1.2em;
+  }
+}
+/**
+ * ===============================================================
+ * Common
+ * ===============================================================
+ */
+.truncate-2 {
+  display: block;
+  /* Fallback for non-webkit */
+  display: -webkit-box;
+  height: 2.2em;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.truncate-3 {
+  display: block;
+  /* Fallback for non-webkit */
+  display: -webkit-box;
+  height: 5em;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.container-excerpt {
+  padding-bottom: 1.5em;
+}
+.font-normal {
+  font-style: normal;
+}
+.invisible {
+  visibility: hidden;
+}
+.full-height {
+  height: 100%;
+}
+.full-width {
+  width: 100%;
+}
+.position-relative {
+  position: relative;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.serif {
+  font-family: 'Bellefair', serif;
+}
+.current > a {
+  cursor: default;
+}
+.uppercase {
+  text-transform: uppercase !important;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+.float-right {
+  float: right;
+}
+/**
+ * Float a flex to right
+ * https://stackoverflow.com/questions/36182635/making-a-flex-item-float-right/36182782
+ */
+.flex-to-right {
+  display: flex;
+}
+.flex-to-right .flex-child {
+  margin-left: auto;
+}
+/**
+ * Float a flex to bottom
+ * https://stackoverflow.com/questions/36182635/making-a-flex-item-float-right/36182782
+ */
+.flex-to-bottom {
+  display: flex;
+  flex-direction: column;
+}
+.flex-to-bottom .flex-child {
+  margin-top: auto;
+}
+/**
+ * Flex centre the child in it.
+ * https://davidwalsh.name/css-vertical-center-flexbox
+ */
+.flex-centre {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+/**
+ * Image background.
+ */
+.image-background {
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+}
+.image-background img {
+  display: none;
+}
+/**
+ * Flip
+ * https://stackoverflow.com/questions/17955983/flip-horizontally-html-and-css
+ * https://css-tricks.com/snippets/css/flip-an-image/
+ */
+.flip {
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+  -ms-filter: fliph;
+  /*IE*/
+  filter: fliph;
+  /*IE*/
+}
+/**
+ * Add border bottom to the box.
+ */
+.bar-bottom {
+  border-bottom: 5px solid #DADADA;
+}
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+  /**
+     * Change container size on xxlarge screen.
+     */
+  .grid-container {
+    max-width: 90rem;
+  }
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .grid-container:not(.full-height) {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .align-top-for-medium {
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .grid-container:not(.full-height) {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .align-top-for-small {
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  .bar-bottom-for-small-only {
+    border-bottom: 5px solid #DADADA;
+  }
+  .block-for-small-only {
+    display: block !important;
+  }
+}
+/**
+ * ===============================================================
+ * Animations.
+ * ===============================================================
+ */
+/**
+ * Keyframes for cross browsers.
+ * https://css-tricks.com/forums/topic/keyframes-is-not-working-in-less-mixin-with-lesshat/
+ */
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+@-moz-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+@-ms-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+@-o-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-ms-keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeToNone {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-moz-keyframes fadeToNone {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-ms-keyframes fadeToNone {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-o-keyframes fadeToNone {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeToNone {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeToBlock {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeToBlock {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-ms-keyframes fadeToBlock {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeToBlock {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeToBlock {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/**
+ * Animation on hover.
+ */
+/**
+ * Reverse animation on mouse out.
+ */
+/**
+ * Animation on hover.
+ */
+/**
+ * Reverse animation on mouse out.
+ */
+/**
+ * ===============================================================
+ * Scale and fade in out the image background
+ * ===============================================================
+ */
+.scale-fade {
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 1;
+  /**
+     * Reverse the fadeout.
+     */
+}
+.scale-fade:hover {
+  opacity: 0.5;
+  /**
+         * Fade out.
+         */
+}
+.scale-fade:hover .image-background {
+  /**
+             * Scale up the image.
+             */
+  transform: scale(1.025);
+}
+.scale-fade .image-background {
+  /**
+         * Transition for scaling the image.
+         */
+  transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+/**
+ * ===============================================================
+ * Header
+ * ===============================================================
+ */
+.row-logo {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #F3F3F3;
+}
+.button-hamburger {
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+.button-hamburger i {
+  color: #3B3B3B;
+  font-size: 24px;
+}
+.button-hamburger i:hover {
+  color: #19ADBC;
+}
+.button-hamburger.to-right {
+  top: 5px;
+  left: auto;
+  right: 5px;
+}
+.button-hamburger.medium {
+  position: relative;
+  top: auto;
+  left: auto;
+}
+.button-hamburger.medium i {
+  font-size: 28px;
+}
+.button-magnify {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.button-language {
+  color: #3B3B3B;
+  font-size: 16px;
+  font-weight: 500;
+}
+.button-language:hover {
+  color: #19ADBC;
+}
+.button-language i {
+  font-size: 16px;
+}
+.button-logo-avatar {
+  background: url('images/header-profile-andrew.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 200px auto;
+  min-width: 150px;
+  min-height: 150px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 30px;
+  /**
+     * Hide the text.
+     */
+  text-indent: -9999px;
+  /**
+     * Reverse the fadeout.
+     */
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+.button-logo-avatar:hover {
+  opacity: 0.5;
+  /**
+         * Fade out.
+         */
+}
+.button-logo-type {
+  text-decoration: none;
+  font-size: 30px;
+  /**
+     * Reverse the fadeout.
+     */
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+.button-logo-type:hover {
+  opacity: 0.5;
+  /**
+         * Fade out.
+         */
+}
+.logo-type-centred {
+  margin-top: 10px;
+  display: block;
+  font-size: 20px;
+  font-family: 'Bellefair', serif;
+  color: #A0A0A0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.tagline {
+  font-family: 'Bellefair', serif;
+  font-size: 20px;
+  line-height: 1.25em;
+  color: #A0A0A0;
+}
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+  .row-logo.collections,
+  .row-logo.history {
+    padding-bottom: 14px;
+  }
+}
+/* XLarge only */
+@media screen and (min-width: 75em) and (max-width: 90.9375em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/* Medium only */
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .row-logo {
+    padding-bottom: 40px;
+  }
+  .row-logo.transparent-for-small-only {
+    background-color: transparent;
+  }
+  .button-logo-avatar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .button-logo-type {
+    font-size: 32px;
+  }
+  .tagline {
+    font-family: 'Bellefair', serif;
+    font-size: 22px;
+    line-height: 22px;
+    color: #3B3B3B;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: center;
+  }
+  .row-logo .flex-centre {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+  .row-logo .nav-language {
+    position: absolute;
+    top: 5px;
+    right: 0;
+  }
+  .row-logo .nav-language ul {
+    list-style: none;
+    background-color: #F3F3F3;
+    padding-top: 0;
+    padding-right: 0;
+  }
+  .row-logo .nav-language ul li:not(:first-child) {
+    display: none;
+  }
+  .row-logo .nav-language ul li a {
+    padding-bottom: 5px;
+    padding-left: 5px;
+  }
+  .row-logo .nav-language ul:hover li {
+    display: block;
+  }
+  .row-logo .nav-language.transparent-for-small-only ul {
+    background-color: transparent;
+  }
+}
+/**
+ * ===============================================================
+ * Nav
+ * ===============================================================
+ */
+.row-nav1 {
+  background-color: #3B3B3B;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.row-nav1 .lastest-news {
+  color: #ffffff;
+}
+.row-nav1 .lastest-news a {
+  color: #ffffff;
+  font-size: 14px;
+}
+.row-nav1 .lastest-news a:hover {
+  color: #19ADBC;
+}
+.row-nav1 .lastest-news a .mi-small {
+  font-size: 18px;
+}
+.row-nav1 .lastest-news .label-latest {
+  margin-right: 5px;
+  font-size: 14px;
+}
+.row-nav1 .nav-nav1 a {
+  color: #ffffff;
+  font-size: 14px;
+}
+.row-nav1 .nav-nav1 a:hover {
+  color: #19ADBC;
+}
+.row-nav1 .nav-nav1 .current > a {
+  color: #DADADA;
+}
+.row-nav1 .nav-nav1 .last {
+  padding: 0;
+}
+.row-nav1 .nav-nav1 .menu-language {
+  padding: 0;
+  margin: 0;
+}
+.row-nav1 .nav-nav1 .menu-language li {
+  margin: 0;
+}
+.row-nav1 .nav-nav1 .menu-language .current > a {
+  color: #A0A0A0;
+}
+.row-nav1 .nav-nav1 .menu-language .divide-vertical {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 14px;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: inline-block;
+}
+.row-nav2 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #DADADA;
+  background-color: transparent;
+}
+.row-nav2 .nav-nav2 a {
+  padding-left: 0;
+  padding-right: 0 !important;
+  font-size: 20px;
+  font-weight: 500;
+  color: #3B3B3B;
+}
+.row-nav2 .nav-nav2 a:hover {
+  color: #19ADBC;
+}
+.row-nav2 .nav-nav2 li {
+  margin-left: 0 !important;
+}
+.row-nav2 .nav-nav2 li:not(:last-child) {
+  margin-right: 40px;
+}
+.row-nav2 .nav-nav2 .current > a {
+  color: #A0A0A0;
+}
+.row-nav2 .nav-nav2 .menu-sub {
+  border: none;
+  background-color: #F3F3F3;
+  margin-left: -1.5em !important;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.row-nav2 .nav-nav2 .menu-sub li {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  margin: 0;
+}
+.row-nav2 .nav-nav2 .menu-sub li a {
+  font-size: 16px;
+}
+.row-nav2 .nav-nav2 .mi-arrow-down {
+  line-height: 10px;
+}
+.row-nav2 form input {
+  margin: 0;
+  border: none !important;
+  background-color: transparent !important;
+  /**
+             * Remove box shadow
+             */
+  box-shadow: none !important;
+}
+.row-nav2 form .flex-items {
+  display: flex;
+  flex-direction: row;
+}
+.row-nav2 form .flex-item {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.row-nav2 form .flex-item.container-input {
+  -webkit-box-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+}
+.row-nav2 form .flex-item.active {
+  -webkit-box-flex: 8;
+  -ms-flex-positive: 8;
+  flex-grow: 8;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  transition: all 1s ease;
+}
+/**
+ * Grid rid of the default dark blue.
+ */
+.dropdown.menu > li.is-dropdown-submenu-parent.is-active > a {
+  color: #19ADBC;
+}
+.dropdown.menu > li.is-dropdown-submenu-parent.is-active > a:hover {
+  color: #19ADBC;
+}
+/**
+ * Get rid of the arrow
+ * https://stackoverflow.com/questions/45268043/foundation-6-4-1-how-to-make-the-dropdown-menu-centre-under-its-parent
+ */
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+  content: none;
+}
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+}
+/* XLarge only */
+/* Large only */
+/* Medium only */
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+}
+/**
+ * ===============================================================
+ * Nav side
+ * ===============================================================
+ */
+.nav-side li a:not(.button-search) {
+  font-size: 14px;
+}
+.nav-side .form-search {
+  padding-left: 1em;
+}
+.nav-side form input {
+  margin: 0;
+  border: none !important;
+  background-color: transparent !important;
+  /**
+             * Remove box shadow
+             */
+  box-shadow: none !important;
+}
+.nav-side form .flex-items {
+  display: flex;
+  flex-direction: row;
+}
+.nav-side form .flex-item {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.nav-side form .flex-item.container-input {
+  -webkit-box-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+}
+.nav-side form .flex-item.active {
+  -webkit-box-flex: 8;
+  -ms-flex-positive: 8;
+  flex-grow: 8;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.menu-side li {
+  background-color: #F3F3F3;
+}
+.menu-side li a {
+  padding-top: 1em;
+  background-color: #F3F3F3;
+  color: #19ADBC;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.menu-side li a:hover {
+  color: #3B3B3B;
+}
+.menu-side li:first-child > a {
+  padding-top: 1.4em;
+}
+.menu-side li:last-child > a {
+  padding-bottom: 1.4em;
+}
+.menu-side .menu-sub {
+  margin: 0 !important;
+}
+.menu-side .menu-sub li a {
+  background-color: #DADADA;
+  color: #A0A0A0;
+}
+.menu-side .menu-sub li a:hover {
+  color: #19ADBC;
+}
+.accordion-menu.menu-side > li.is-accordion-submenu-parent.is-expanded > a {
+  color: #3b3b3b;
+}
+.accordion-menu.menu.menu-side > li.is-accordion-submenu-parent.is-expanded > a::after {
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='24px' height='24px' viewBox='0 0 24 24' enable-background='new 0 0 24 24' xml:space='preserve'><path d='M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z' fill='#3b3b3b'/><path fill='none' d='M0,0h24v24H0V0z'/></svg>");
+}
+/**
+ * ===============================================================
+ * Nav mobile
+ * ===============================================================
+ */
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+}
+/* XLarge only */
+@media screen and (min-width: 75em) and (max-width: 90.9375em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+}
+/**
+ * ===============================================================
+ * Affix
+ * ===============================================================
+ */
+.row-affix {
+  display: none;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  background-color: #F3F3F3;
+  -webkit-box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.2), 0 6px 20px -10px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.2), 0 6px 20px -10px rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.2), 0 6px 20px -10px rgba(0, 0, 0, 0.19);
+}
+.row-affix {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.row-affix .nav-nav2 a {
+  padding-left: 0;
+  padding-right: 0 !important;
+  font-size: 20px;
+  font-weight: 500;
+  color: #3B3B3B;
+}
+.row-affix .nav-nav2 a:hover {
+  color: #19ADBC;
+}
+.row-affix .nav-nav2 li {
+  margin-left: 0 !important;
+}
+.row-affix .nav-nav2 li:not(:last-child) {
+  margin-right: 40px;
+}
+.row-affix .nav-nav2 .current > a {
+  color: #A0A0A0;
+}
+.row-affix .nav-nav2 .menu-sub {
+  border: none;
+  background-color: #F3F3F3;
+  margin-left: -1.5em !important;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.row-affix .nav-nav2 .menu-sub li {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  margin: 0;
+}
+.row-affix .nav-nav2 .menu-sub li a {
+  font-size: 16px;
+}
+.row-affix .nav-nav2 .mi-arrow-down {
+  line-height: 10px;
+}
+.row-affix .nav-language {
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+.row-affix .nav-language ul {
+  list-style: none;
+  background-color: #F3F3F3;
+  padding-top: 0;
+  padding-right: 0;
+}
+.row-affix .nav-language ul li:not(:first-child) {
+  display: none;
+}
+.row-affix .nav-language ul li a {
+  padding-bottom: 5px;
+  padding-left: 5px;
+}
+.row-affix .nav-language ul:hover li {
+  display: block;
+}
+.row-affix form input {
+  margin: 0;
+  border: none !important;
+  background-color: transparent !important;
+  /**
+             * Remove box shadow
+             */
+  box-shadow: none !important;
+}
+.row-affix form .flex-items {
+  display: flex;
+  flex-direction: row;
+}
+.row-affix form .flex-item {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.row-affix form .flex-item.container-input {
+  -webkit-box-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+}
+.row-affix form .flex-item.active {
+  -webkit-box-flex: 8;
+  -ms-flex-positive: 8;
+  flex-grow: 8;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.row-affix form input {
+  background-color: #F3F3F3 !important;
+}
+.row-affix .nav-nav2 a {
+  font-size: 18px;
+}
+.row-affix .button-logo-type {
+  text-decoration: none;
+  font-size: 32px;
+}
+/**
+ * Place it centered.
+ * Do it dynamically for each dropdown with jQuery.
+ */
+.dropdown.menu > li.opens-left > .is-dropdown-submenu {
+  margin-right: -65px;
+}
+/**
+ * Fix the dropdown width.
+ * https://stackoverflow.com/questions/45269978/foundation-6-4-1-how-to-fix-the-dropdown-menu-width
+ */
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+}
+/* XLarge only */
+@media screen and (min-width: 75em) and (max-width: 90.9375em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+}
+/**
+ * ===============================================================
+ * Aside
+ * ===============================================================
+ */
+.navbar-aside {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999999999;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+.navbar-aside .overlay-menu-aside {
+  height: 100%;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.navbar-aside .cell-aside {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #000000;
+  display: none;
+}
+.navbar-aside .nav-scrollbar {
+  position: relative;
+  width: 100%;
+  height: 85%;
+}
+.navbar-aside .container-button {
+  margin-bottom: 10px;
+}
+.navbar-aside .container-search {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ffffff;
+}
+.navbar-aside .container-search form input {
+  margin: 0;
+  padding: 1px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  /**
+                 * Remove box shadow
+                 */
+  box-shadow: none;
+}
+.navbar-aside .container-search .button-search {
+  color: #ffffff;
+}
+.navbar-aside .container-search .button-search:hover {
+  color: #A0A0A0;
+}
+.button-close {
+  font-size: 31px;
+}
+.button-close i {
+  color: #ffffff;
+}
+.button-close i:hover {
+  color: #19ADBC;
+}
+.menu-aside li {
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+}
+.menu-aside li a {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 40px;
+}
+.menu-aside li a:hover {
+  color: #19ADBC;
+}
+.menu-aside .menu-sub {
+  margin: 0 !important;
+}
+.menu-aside .menu-sub li a {
+  color: #A0A0A0;
+  font-size: 18px;
+  font-size: normal;
+}
+.menu-aside .menu-sub li a:hover {
+  color: #19ADBC;
+}
+/**
+ * Break the very long text.
+ * https://stackoverflow.com/questions/45269978/foundation-6-4-1-how-to-fix-the-dropdown-menu-width
+ */
+.accordion-menu.menu > li a {
+  white-space: normal !important;
+}
+/**
+ * Custom arrow.
+ * https://stackoverflow.com/questions/20573331/how-to-style-dropdown-buttons-using-zurb-foundation-5
+ */
+.accordion-menu.menu > li.is-accordion-submenu-parent > a::after {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='24px' height='24px' viewBox='0 0 24 24' enable-background='new 0 0 24 24' xml:space='preserve'><path d='M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z' fill='#ffffff'/><path fill='none' d='M0,0h24v24H0V0z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: -10px;
+  border: 1px solid #000000;
+}
+.accordion-menu.menu.menu-side > li.is-accordion-submenu-parent > a::after {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='24px' height='24px' viewBox='0 0 24 24' enable-background='new 0 0 24 24' xml:space='preserve'><path d='M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z' fill='#19ADBC'/><path fill='none' d='M0,0h24v24H0V0z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: -10px;
+  border: 1px solid #F3F3F3;
+}
+.accordion-menu.menu.menu-side > li.is-accordion-submenu-parent > a:hover::after {
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='24px' height='24px' viewBox='0 0 24 24' enable-background='new 0 0 24 24' xml:space='preserve'><path d='M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z' fill='#3b3b3b'/><path fill='none' d='M0,0h24v24H0V0z'/></svg>");
+}
+.accordion-menu.menu.menu-side .is-accordion-submenu-parent:not(.has-submenu-toggle) > a::after {
+  display: inline-block !important;
+  position: relative;
+  right: auto;
+  top: auto;
+  margin-left: 1em;
+}
+/*
+Change the placeholder colour.
+http://foundation.zurb.com/forum/posts/19004-customcss-file-doesnt-work--placeholder-color-cant-change
+https://stackoverflow.com/questions/2610497/change-an-html5-inputs-placeholder-color-with-css
+*/
+form.form-search input::-webkit-input-placeholder,
+form.form-search textarea::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #666;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+form.form-search input:-moz-placeholder,
+form.form-search textarea:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #666;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+form.form-search input::-moz-placeholder,
+form.form-search textarea::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #666;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+form.form-search input:-ms-input-placeholder,
+form.form-search textarea::-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #666;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+form.form-search input::-ms-input-placeholder,
+form.form-search textarea::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #666;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+/**
+ * ===============================================================
+ * Search
+ * ===============================================================
+ */
+.button-search {
+  background-color: #DADADA;
+  background-color: initial;
+  color: #3B3B3B;
+  padding: 5px;
+  margin: 0;
+  font-size: 25px;
+  line-height: 15px;
+}
+.button-search:hover {
+  color: #A0A0A0;
+  background-color: initial;
+}
+.button-search:active {
+  color: #3B3B3B;
+}
+.button-search:focus {
+  color: #3B3B3B;
+}
+/**
+ * ===============================================================
+ * Home page
+ * ===============================================================
+ */
+/**
+ * Global
+ */
+.row-heading {
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+}
+.row-heading.with-nav {
+  padding-bottom: 30px;
+}
+.row-heading .container-heading {
+  padding-bottom: 0.5em;
+}
+.row-heading img {
+  padding-top: 10px;
+}
+.row-heading .nav-nav3 {
+  margin-left: -15px;
+}
+.row-heading .nav-nav3 li.is-dropdown-submenu-parent > a {
+  padding-right: 0;
+}
+.row-heading .nav-nav3 a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #19ADBC;
+  text-transform: uppercase;
+}
+.row-heading .nav-nav3 a:hover {
+  color: #3B3B3B;
+}
+.row-heading .nav-nav3 .current > a {
+  color: #A0A0A0;
+}
+.row-heading .nav-nav3 .menu-sub {
+  border: none;
+  background-color: #F3F3F3;
+}
+.row-heading .nav-nav3 .menu-sub li {
+  margin: 0;
+}
+.row-heading .nav-nav3 .mi-arrow-down {
+  line-height: 10px;
+}
+.row-heading form input {
+  margin: 0;
+  border: none !important;
+  background-color: transparent !important;
+  /**
+             * Remove box shadow
+             */
+  box-shadow: none !important;
+}
+.row-heading form .flex-items {
+  display: flex;
+  flex-direction: row;
+}
+.row-heading form .flex-item {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.row-heading form .flex-item.container-input {
+  -webkit-box-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+}
+.row-heading form .flex-item.active {
+  -webkit-box-flex: 8;
+  -ms-flex-positive: 8;
+  flex-grow: 8;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.heading {
+  padding: 0;
+  margin: 0;
+  font-size: 32px;
+  font-weight: 500;
+}
+.heading.with-margin {
+  margin-bottom: 5px;
+}
+.heading.large {
+  font-size: 48px;
+  line-height: 1.25em;
+}
+.heading.medium {
+  font-size: 24px;
+  line-height: 1.25em;
+}
+.heading.inline {
+  display: inline-block;
+}
+.heading-latest {
+  font-weight: 500;
+}
+.button-green {
+  color: #19ADBC;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  display: inline-block;
+}
+.button-green.uppercase {
+  text-transform: uppercase;
+}
+.button-green:hover {
+  color: #3B3B3B;
+}
+.button-grey {
+  color: #A0A0A0;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  display: inline-block;
+}
+.button-grey.uppercase {
+  text-transform: uppercase;
+}
+.button-grey:hover {
+  color: #3B3B3B;
+}
+.button-grey.position-relative.padding-left {
+  padding-left: 20px;
+  margin-bottom: 1em;
+}
+.button-grey.position-relative.padding-left i {
+  font-size: 23px;
+  position: absolute;
+  top: -3px;
+  left: -8px;
+}
+.button-title {
+  color: #3B3B3B;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 22px;
+}
+.button-title:hover {
+  color: #19ADBC;
+}
+.button-title.disabled:hover {
+  cursor: default;
+  color: #3B3B3B;
+}
+.heading-title {
+  color: #3B3B3B;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+.collapse-margin-bottom {
+  margin-bottom: 0;
+}
+/**
+ * Make a square background image.
+ */
+.square-image {
+  width: 100%;
+  padding-bottom: 100%;
+  /*margin: 0 auto;*/
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/**
+ * Make a landscape background image.
+ */
+.landscape-image {
+  width: 100%;
+  padding-bottom: 70%;
+  /*margin: 0 auto;*/
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/**
+ * Make a portrait background image.
+ */
+.portrait-image {
+  width: 100%;
+  padding-bottom: 130%;
+  /*margin: 0 auto;*/
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/**
+ * Make a xtra-portrait background image.
+ */
+.xtra-portrait-image {
+  width: 100%;
+  padding-bottom: 180%;
+  /*margin: 0 auto;*/
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+}
+/* XLarge only */
+@media screen and (min-width: 75em) and (max-width: 90.9375em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .heading.medium-for-small {
+    font-size: 28px;
+  }
+}
+/**
+ * Featured
+ */
+.row-featured {
+  padding-top: 40px;
+}
+.row-featured .container-featured {
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-bottom: 40px;
+  /** for small screen **/
+}
+.row-featured .cell-featured {
+  background-color: #F3F3F3;
+  padding: 1.5em;
+}
+.row-featured .category-featured {
+  margin-bottom: 30px;
+  display: block;
+  font-weight: bold;
+}
+.row-featured .heading-featured {
+  margin: 0;
+  display: block;
+  line-height: 36px;
+}
+.row-featured .heading-featured a {
+  display: block;
+  font-size: 36px;
+  font-weight: 500;
+  color: #3B3B3B;
+}
+.row-featured .heading-featured a:hover {
+  color: #19ADBC;
+}
+.row-featured .textbox-featured p {
+  font-size: 20px;
+  line-height: 28px;
+  color: #3B3B3B;
+}
+.row-featured .imagebox-featured {
+  height: 500px;
+  overflow: hidden;
+}
+/**
+ * Card
+ */
+.row-latest-header {
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+.row-latest-header .nav-topic .heading-topic {
+  font-size: 14px;
+  font-weight: bold;
+  color: #19ADBC;
+  text-transform: uppercase;
+}
+.row-latest-header .nav-topic li {
+  margin-left: 0 !important;
+  margin-right: 20px;
+}
+.row-latest-header .nav-topic li:last-child {
+  margin-right: 0;
+}
+.row-latest-header .nav-topic li a {
+  color: #A0A0A0;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.row-latest-header .nav-topic li a:hover {
+  color: #3B3B3B;
+}
+.row-latest-header .divider-horizontal {
+  max-width: 100%;
+  margin: 0;
+}
+.cell-card:not(.last) {
+  margin-bottom: 30px;
+}
+.cell-card .container-card {
+  height: 100%;
+}
+.cell-card .container-card .card-latest {
+  background-color: #F3F3F3;
+  border: none;
+  margin-bottom: 0;
+  height: 100%;
+}
+.cell-card .container-card .card-latest .card-section {
+  padding: 1.5em;
+}
+.cell-card .container-card .card-latest .card-section .category-card {
+  display: block;
+  margin-bottom: 15px;
+}
+.cell-card .container-card .card-latest .card-section .category-card.collection {
+  display: inline-block;
+}
+.cell-card .container-card .card-latest .card-section.collection {
+  padding: 0;
+}
+.cell-card .container-card .card-history {
+  background-color: #F3F3F3;
+  border: none;
+  margin-bottom: 0;
+  min-height: 200px;
+}
+.cell-card .container-card .card-history .card-section {
+  padding-top: 1.5em;
+  padding-left: 1.5em;
+  padding-bottom: 1.5em;
+}
+.cell-card .container-card .card-history .card-section .card-heading,
+.cell-card .container-card .card-history .card-section .card-heading a {
+  color: #3B3B3B;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 22px;
+  margin-bottom: 1em;
+}
+.cell-card .container-card .card-history .card-section .card-heading:hover,
+.cell-card .container-card .card-history .card-section .card-heading a:hover {
+  color: #19ADBC;
+}
+.cell-card .container-card .card-history .card-section .mi-small {
+  position: absolute;
+  top: -5px;
+  right: 0;
+}
+.cell-card .container-card .card-collection {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 0;
+  height: 100%;
+}
+.cell-card .container-card .card-collection .card-section {
+  padding-top: 0.5em;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.cell-card .container-card .card-collection .card-section .category-card {
+  display: inline-block;
+  margin-bottom: 0;
+}
+.cell-card .container-card .card-collection .card-section .heading-title {
+  margin-bottom: 0;
+}
+.cell-card .container-card .card-event {
+  background-color: #F3F3F3;
+  border: none;
+  margin-bottom: 0;
+  height: 100%;
+}
+.cell-card .container-card .card-event .card-section {
+  padding: 1.5em;
+}
+.cell-card .container-card .card-event .card-section .card-heading {
+  color: #3B3B3B;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 22px;
+}
+.cell-card .container-card .card-event .card-section .card-meta {
+  margin-bottom: 15px;
+}
+.cell-card .container-card .card-event .card-section .card-source,
+.cell-card .container-card .card-event .card-section .card-date {
+  display: block;
+  color: #A0A0A0;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.cell-card .container-card .card-event .card-section .card-excerpt {
+  padding-bottom: 1.5em;
+}
+.cell-card .container-card .card-event .container-nav {
+  display: block;
+  position: absolute;
+  left: 1.5em;
+  bottom: 1.5em;
+}
+.cell-card .container-card .card-event .heading-nav {
+  font-weight: bold;
+  font-size: 14px;
+  color: #3B3B3B;
+  text-transform: uppercase;
+}
+.cell-card .container-card .card-event .nav-card li {
+  margin-left: 0;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+.cell-card .container-card .card-event .nav-card li a {
+  color: #19ADBC;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: capitalize;
+  position: relative;
+  padding-right: 25px;
+}
+.cell-card .container-card .card-event .nav-card li a i {
+  padding: 0;
+  position: absolute;
+  top: -4px;
+  right: 0;
+}
+.cell-card .container-card .card-event .nav-card li a:hover {
+  color: inherit;
+}
+.cell-card .container-card .card-book {
+  background-color: #F3F3F3;
+  border: none;
+  margin-bottom: 0;
+  height: 100%;
+}
+.cell-card .container-card .card-book .card-section {
+  padding: 1.5em;
+}
+.cell-card .container-card .card-book .card-section .card-heading {
+  color: #3B3B3B;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 22px;
+}
+.cell-card .container-card .card-book .card-section .card-meta {
+  margin-bottom: 15px;
+}
+.cell-card .container-card .card-book .card-section .card-source,
+.cell-card .container-card .card-book .card-section .card-date {
+  display: block;
+  color: #A0A0A0;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.cell-card .container-card .card-book .card-section .card-excerpt {
+  padding-bottom: 1.5em;
+}
+.cell-card .container-card .card-book .card-image {
+  margin-bottom: 1.5em;
+}
+.cell-card .container-card .card-book .container-nav {
+  display: block;
+}
+.cell-card .container-card .card-book .heading-nav {
+  font-weight: bold;
+  font-size: 14px;
+  color: #3B3B3B;
+  text-transform: uppercase;
+}
+.cell-card .container-card .card-book .nav-card li {
+  margin-left: 0;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+.cell-card .container-card .card-book .nav-card li a {
+  color: #19ADBC;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: capitalize;
+  position: relative;
+  padding-right: 25px;
+}
+.cell-card .container-card .card-book .nav-card li a i {
+  padding: 0;
+  position: absolute;
+  top: -4px;
+  right: 0;
+}
+.cell-card .container-card .card-book .nav-card li a:hover {
+  color: inherit;
+}
+.cell-card .container-card .card-video {
+  background-color: #F3F3F3;
+  border: none;
+  margin-bottom: 0;
+  height: 100%;
+}
+.cell-card .container-card .card-video .card-section {
+  padding: 0;
+}
+.cell-card .container-card .card-video .card-section .card-heading,
+.cell-card .container-card .card-video .card-section .card-heading a {
+  color: #3B3B3B;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 22px;
+}
+.cell-card .container-card .card-video .card-section .card-heading:hover,
+.cell-card .container-card .card-video .card-section .card-heading a:hover {
+  color: #19ADBC;
+}
+.cell-card .container-card .card-video .card-section .card-meta {
+  margin-bottom: 15px;
+}
+.cell-card .container-card .card-video .card-section .card-source,
+.cell-card .container-card .card-video .card-section .card-date {
+  display: block;
+  color: #A0A0A0;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.cell-card .container-card .card-video .card-section .card-excerpt {
+  padding-bottom: 1.5em;
+}
+.cell-card .container-card .card-video .card-section .container-text {
+  padding-top: 1.5em;
+  padding-right: 1.5em;
+  padding-bottom: 1.5em;
+}
+.cell-card .container-card .card-video .container-nav {
+  display: block;
+}
+.cell-card .container-card .card-video .heading-nav {
+  font-weight: bold;
+  font-size: 14px;
+  color: #3B3B3B;
+  text-transform: uppercase;
+}
+.cell-card .container-card .card-video .nav-card li {
+  margin-left: 0;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+.cell-card .container-card .card-video .nav-card li a {
+  color: #19ADBC;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: capitalize;
+  position: relative;
+  padding-right: 25px;
+}
+.cell-card .container-card .card-video .nav-card li a i {
+  padding: 0;
+  position: absolute;
+  top: -4px;
+  right: 0;
+}
+.cell-card .container-card .card-video .nav-card li a:hover {
+  color: inherit;
+}
+.cell-card .container-card .card-about {
+  background-color: #F3F3F3;
+  border: none;
+  margin-bottom: 0;
+  height: 100%;
+}
+.cell-card .container-card .card-about .card-section {
+  padding: 0;
+}
+.cell-card .container-card .card-about .card-section .card-heading {
+  display: block;
+  color: #A0A0A0;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.cell-card .container-card .card-about .card-section .card-list {
+  list-style: none;
+  margin-left: 0;
+}
+.cell-card .container-card .card-about .card-section .container-text {
+  padding-top: 1.5em;
+  padding-right: 1.5em;
+  padding-bottom: 1.5em;
+}
+/**
+ * About
+ */
+.row-about {
+  padding-bottom: 60px;
+}
+.row-about .contact-details .heading-contact {
+  display: block;
+  color: #A0A0A0;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.row-about .contact-details a {
+  color: inherit;
+}
+.row-about .contact-details a:hover {
+  color: #19ADBC;
+}
+/**
+ * Twin
+ */
+.row-twin {
+  padding-top: 20px;
+}
+.row-twin .container-title {
+  margin-bottom: 20px;
+}
+.row-twin .cell-video {
+  margin-bottom: 60px;
+}
+.row-twin .cell-video .container-text {
+  background-color: #F3F3F3;
+  padding: 1.5em;
+}
+.row-twin .cell-book {
+  margin-bottom: 60px;
+}
+.row-twin .cell-book .container-book {
+  background-color: #F3F3F3;
+}
+.row-twin .cell-book .container-book .container-bookcover {
+  /**
+                 * Vertical centre the image
+                 * https://stackoverflow.com/questions/7273338/how-to-vertically-align-an-image-inside-a-div
+                 */
+  display: flex;
+  /*Uncomment below to center horizontally*/
+  /*justify-content: center;*/
+  align-items: center;
+}
+.row-twin .cell-book .container-book .container-bookcover img {
+  width: 100%;
+  height: auto;
+}
+.row-twin .cell-book .container-book .container-meta {
+  margin-bottom: 20px;
+}
+.row-twin .cell-book .container-book .container-title {
+  margin-bottom: 20px;
+}
+.row-twin .cell-book .container-book .container-text {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  padding-right: 1.5em;
+}
+.row-twin .cell-book .container-book .book-publiser,
+.row-twin .cell-book .container-book .book-year {
+  display: block;
+  color: #A0A0A0;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.row-twin .cell-book .container-book .book-description {
+  margin-bottom: 30px !important;
+  font-size: 16px;
+}
+.row-twin .cell-book .container-book .heading-nav {
+  font-weight: bold;
+  font-size: 14px;
+  color: #3B3B3B;
+  text-transform: uppercase;
+}
+.row-twin .cell-book .container-book .nav-card li {
+  margin-left: 0;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+.row-twin .cell-book .container-book .nav-card li a {
+  color: #19ADBC;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: capitalize;
+  position: relative;
+  padding-right: 25px;
+}
+.row-twin .cell-book .container-book .nav-card li a i {
+  padding: 0;
+  position: absolute;
+  top: -4px;
+  right: 0;
+}
+.row-twin .cell-book .container-book .nav-card li a:hover {
+  color: inherit;
+}
+.row-twin .cell-about {
+  margin-bottom: 60px;
+}
+.row-twin .container-about {
+  background-color: #F3F3F3;
+  padding: 1.5em;
+}
+.row-twin .container-about .container-text {
+  margin-bottom: 40px;
+}
+.row-twin .container-about .container-avatar {
+  margin-bottom: 30px;
+}
+.row-twin .container-about .about-avatar {
+  background: url('images/header-profile-andrew.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 350px auto;
+  width: 250px;
+  height: 250px;
+  display: inline-block;
+  border-radius: 50%;
+}
+.row-twin .container-about .about-avatar img {
+  display: none;
+}
+.row-twin .container-about .list-block {
+  padding: 0;
+  margin: 0;
+}
+.row-twin .container-about .list-block li {
+  display: block;
+}
+.row-twin .container-about .list-block li a {
+  color: #19ADBC;
+}
+.row-twin .container-about .list-block li a:hover {
+  color: #3B3B3B;
+}
+.row-twin .container-publications {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+/**
+ * Search results.
+ */
+.container-publications .heading-group {
+  color: #A0A0A0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+.container-publications .published-item {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #DADADA;
+}
+.container-publications .published-item .heading-published,
+.container-publications .published-item .heading-published a {
+  color: #3B3B3B;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 22px;
+  display: block;
+}
+.container-publications .published-item .heading-published a:hover {
+  color: #19ADBC;
+}
+.container-publications .published-item .published-date,
+.container-publications .published-item .published-publisher {
+  color: #A0A0A0;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+  display: block;
+  text-transform: uppercase;
+}
+.container-publications .published-item .published-publisher {
+  margin-bottom: 0;
+}
+.container-publications .published-item .published-publishers .published-publisher {
+  display: inline-block;
+  text-transform: uppercase;
+}
+.container-publications .published-item .published-publishers .published-publisher:not(:last-child):after {
+  content: "\2022";
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #A0A0A0;
+}
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+}
+/* XLarge only */
+@media screen and (min-width: 75em) and (max-width: 90.9375em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .cell-card .container-card .card-video .card-section .container-text {
+    padding-left: 1.5em;
+  }
+  .row-latest-header .heading {
+    padding-bottom: 10px;
+  }
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .cell-card .container-card .card-video .card-section .container-text {
+    padding-left: 1.5em;
+  }
+  .row-heading:not(.history) {
+    padding-top: 0;
+    margin-bottom: 2.5em;
+    background-color: #F3F3F3;
+  }
+  .row-featured .category-featured {
+    margin-bottom: 10px;
+  }
+  .row-featured .heading-featured {
+    line-height: 22px;
+  }
+  .row-featured .heading-featured a {
+    font-size: 20px;
+  }
+  .container-book {
+    padding-top: 1.5em;
+    padding-left: 1.5em;
+  }
+  .container-bookcover {
+    text-align: center;
+  }
+  .container-bookcover img {
+    width: 50% !important;
+    height: auto;
+  }
+  .row-card {
+    padding-top: 20px;
+  }
+  .row-card.collapsed-margin-top-for-small {
+    padding-top: 0;
+  }
+  .cell-card:not(.last) {
+    margin-bottom: 20px;
+  }
+  .heading.about {
+    font-size: 42px;
+  }
+  .heading.small-for-small {
+    font-size: 28px;
+  }
+}
+/**
+ * ===============================================================
+ * Footer
+ * ===============================================================
+ */
+.row-footer {
+  background-color: #3B3B3B;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.row-footer .row-divider hr {
+  border-color: #ffffff;
+  max-width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.row-footer .row-top {
+  padding-bottom: 40px;
+}
+.row-footer .row-top .nav-bold li a {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+}
+.row-footer .row-top .nav-bold li a:hover {
+  color: #19ADBC;
+}
+.row-footer .row-top .nav-thin .heading {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  padding-top: 0.42rem;
+  padding-right: 1rem;
+  padding-bottom: 0.42rem;
+  padding-left: 1rem;
+}
+.row-footer .row-top .nav-thin li a {
+  color: #A0A0A0;
+}
+.row-footer .row-top .nav-thin li a:hover {
+  color: #19ADBC;
+}
+.row-footer .row-bottom .nav-copyright .copyright {
+  color: #A0A0A0;
+  text-transform: uppercase;
+  line-height: 12px;
+  font-weight: 500;
+}
+.row-footer .row-bottom .nav-copyright li {
+  font-size: 12px;
+  margin-left: 0;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+.row-footer .row-bottom .nav-copyright li:last-child {
+  margin-left: 0;
+  margin-right: 0;
+}
+.row-footer .row-bottom .nav-copyright li a {
+  font-size: 12px;
+  color: #A0A0A0;
+  text-transform: uppercase;
+}
+.row-footer .row-bottom .nav-copyright li a .bold {
+  font-weight: 500;
+}
+.row-footer .row-bottom .nav-copyright li a:hover .bold {
+  color: #19ADBC;
+}
+.row-footer .row-bottom .nav-language li {
+  margin: 0;
+}
+.row-footer .row-bottom .nav-language li a {
+  color: #A0A0A0;
+}
+.row-footer .row-bottom .nav-language li a:hover {
+  color: #19ADBC;
+}
+.row-footer .row-bottom .nav-language .current > a {
+  color: #ffffff;
+}
+.row-footer .row-bottom .nav-language .current > a:hover {
+  color: #ffffff;
+}
+.row-footer .row-bottom .nav-language .divide-vertical {
+  color: #ffffff;
+  font-size: 16px;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: inline-block;
+}
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+}
+/* XLarge only */
+@media screen and (min-width: 75em) and (max-width: 90.9375em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .row-footer .row-bottom .nav-copyright .copyright {
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+  .row-footer .row-bottom .nav-copyright li {
+    padding-bottom: 2px;
+  }
+  .row-footer .row-bottom .nav-copyright li a {
+    color: #ffffff;
+  }
+  .row-footer .row-bottom .nav-terms li {
+    margin: 0;
+    padding: 0;
+  }
+  .row-footer .row-bottom .nav-terms li a {
+    margin: 0;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 5px;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 12px;
+  }
+  .row-footer .row-bottom .nav-terms li a:hover {
+    color: #19ADBC;
+  }
+  .row-footer .row-bottom .nav-language {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .row-footer .row-bottom .button-to-top {
+    color: #ffffff;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  .row-footer .row-bottom .button-to-top:hover {
+    color: #19ADBC;
+  }
+}
+/**
+ * ===============================================================
+ * Image row
+ * ===============================================================
+ */
+.row-image {
+  margin-bottom: 1.5em;
+}
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+  .row-article .container-text.margin-top-collapse-for-medium-up {
+    margin-top: 0;
+  }
+}
+/* XLarge only */
+@media screen and (min-width: 75em) and (max-width: 90.9375em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .row-image.margin-collapse-for-small {
+    margin: 0;
+  }
+}
+/**
+ * ===============================================================
+ * Article
+ * ===============================================================
+ */
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+}
+/* XLarge only */
+@media screen and (min-width: 75em) and (max-width: 90.9375em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+}
+/**
+ * ===============================================================
+ * Accordion
+ * ===============================================================
+ */
+.row-accordion {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+.row-accordion .contact-details .heading-contact {
+  display: block;
+  color: #A0A0A0;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.row-accordion .contact-details a {
+  color: inherit;
+}
+.row-accordion .contact-details a:hover {
+  color: #19ADBC;
+}
+.accordion-items {
+  background-color: #ffffff;
+  /**
+     * Overwrite jQuery UI
+     */
+  /**
+     * Place local style after jQuery to overwrite it 100%.
+     */
+}
+.accordion-items .ui-accordion-icons:after {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='24px' height='24px' viewBox='0 0 24 24' enable-background='new 0 0 24 24' xml:space='preserve'><path d='M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z' fill='#19ADBC'/><path fill='none' d='M0,0h24v24H0V0z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid #ffffff;
+  float: right;
+}
+.accordion-items .ui-accordion-header-active:after {
+  color: #000;
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='24px' height='24px' viewBox='0 0 24 24' enable-background='new 0 0 24 24' xml:space='preserve'><path d='M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z' fill='#A0A0A0'/><path fill='none' d='M0,0h24v24H0V0z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid #ffffff;
+  transform: rotate(180deg);
+}
+.accordion-items .ui-state-active {
+  color: #000;
+}
+.accordion-items .ui-accordion-header-icon {
+  display: none;
+}
+.accordion-items .ui-accordion-content {
+  padding: 0;
+  border: none;
+}
+.accordion-items .ui-corner-top {
+  border: inherit;
+  border-top-right-radius: inherit;
+  border-top-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+.accordion-items .heading-accordion {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin: 0;
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+  color: #19ADBC;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.accordion-items .heading-accordion.ui-state-active {
+  color: #A0A0A0;
+}
+.accordion-items .accordion-text {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 1.5em;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+.accordion-items .block-list {
+  list-style: none;
+  margin-left: 0;
+}
+/**
+ * ===============================================================
+ * Article
+ * ===============================================================
+ */
+.row-article .container-text {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+.row-article.history {
+  margin-bottom: 2.5em;
+}
+.article-parent,
+.article-author,
+.article-source {
+  display: block;
+  color: #A0A0A0;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.article-parent.published-publishers .published-publisher,
+.article-author.published-publishers .published-publisher,
+.article-source.published-publishers .published-publisher {
+  display: inline-block;
+  text-transform: uppercase;
+}
+.article-parent.published-publishers .published-publisher:not(:last-child):after,
+.article-author.published-publishers .published-publisher:not(:last-child):after,
+.article-source.published-publishers .published-publisher:not(:last-child):after {
+  content: "\2022";
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #A0A0A0;
+}
+.article-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.container-meta span:not(:last-child) {
+  margin-bottom: 5px;
+}
+.container-meta.for-article {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-top: 1px solid #DADADA;
+  border-bottom: 1px solid #DADADA;
+}
+.container-list {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+.inline-list {
+  list-style: none;
+  margin-left: 0;
+}
+.inline-list .heading-list {
+  padding-right: 5px;
+}
+.inline-list li {
+  display: inline;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #A0A0A0;
+}
+.inline-list li a {
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #19ADBC;
+}
+.inline-list li a:hover {
+  color: #3B3B3B;
+}
+/* overwrite code */
+.at-share-btn-elements a {
+  background: transparent !important;
+  padding: 0 !important;
+}
+.at-svc-email .at-icon-wrapper {
+  background: transparent !important;
+}
+.at-svc-email .at-icon-wrapper svg,
+.at-svc-linkedin .at-icon-wrapper svg,
+.at-svc-twitter .at-icon-wrapper svg,
+.at-svc-facebook .at-icon-wrapper svg,
+.at-svc-print .at-icon-wrapper svg {
+  fill: #19ADBC !important;
+}
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+  .float-right-for-medium {
+    float: right;
+  }
+  .padding-for-medium {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+/* XLarge only */
+@media screen and (min-width: 75em) and (max-width: 90.9375em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .container-addthis {
+    margin-top: 1.5em;
+    margin-left: -5px;
+  }
+  .row-publications.article {
+    background-color: #F3F3F3;
+  }
+}
+/**
+ * ===============================================================
+ * Global Search
+ * ===============================================================
+ */
+.result-counts {
+  color: #A0A0A0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}
+.row-result .container-publications {
+  margin-bottom: 1.5em;
+}
+.row-result .heading-nav {
+  font-weight: bold;
+  font-size: 14px;
+  color: #3B3B3B;
+  text-transform: uppercase;
+}
+.row-result .nav-card li {
+  margin-left: 0;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+.row-result .nav-card li a {
+  color: #19ADBC;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: capitalize;
+  position: relative;
+  padding-right: 25px;
+}
+.row-result .nav-card li a i {
+  padding: 0;
+  position: absolute;
+  top: -4px;
+  right: 0;
+}
+.row-result .nav-card li a:hover {
+  color: inherit;
+}
+.row-result .nav-card li {
+  margin-left: 0;
+  margin-right: 0;
+}
+.icon-play {
+  margin-right: 10px;
+}
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+}
+/* XLarge only */
+@media screen and (min-width: 75em) and (max-width: 90.9375em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .row-result {
+    padding-top: 1.5em;
+  }
+}
+/**
+ * ===============================================================
+ * Local Search
+ * ===============================================================
+ */
+.row-search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999999999;
+  height: 100%;
+  background-color: #101010;
+}
+.row-search .cell-search {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.row-search .heading-search {
+  color: #ffffff;
+}
+.row-search .container-search {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ffffff;
+}
+.row-search .container-search form input {
+  margin: 0;
+  padding: 1px;
+  background-color: #101010;
+  color: #ffffff;
+  border: none;
+  /**
+                 * Remove box shadow
+                 */
+  box-shadow: none;
+}
+.row-search .container-search .button-search {
+  color: #ffffff;
+}
+.row-search .container-search .button-search:hover {
+  color: #A0A0A0;
+}
+/**
+ * ===============================================================
+ * Print
+ * ===============================================================
+ */
+/**
+ * https://www.addthis.com/blog/2014/02/05/make-your-site-printer-friendly-with-css/
+ */
+@media print {
+  /* Print CSS rules go here */
+  /* Note: You need a separate @media screen group for other rules */
+  .hide-for-print {
+    display: none;
+  }
+  .cell-for-print {
+    width: 100% !important;
+  }
+  .cell-for-print.large-offset-2 {
+    margin-left: 0 !important;
+  }
+}
+/**
+ * ===============================================================
+ * Swiper - gallery
+ * ===============================================================
+ */
+/**
+ * Gallery swiper
+ */
+.row-article {
+  /**
+     * Customise the arrow button.
+     * https://stackoverflow.com/questions/45381871/swiper-how-to-customise-arrow-buttons
+     */
+}
+.row-article .swiper-container {
+  width: 100%;
+  height: 130px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.row-article .swiper-container:first-child {
+  height: 400px;
+}
+.row-article .swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+.row-article .swiper-slide.open-overlay-content {
+  cursor: pointer;
+}
+.row-article .gallery-top {
+  width: 100%;
+}
+.row-article .gallery-thumbs {
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+.row-article .gallery-thumbs .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+.row-article .gallery-thumbs .swiper-slide-active {
+  opacity: 1;
+}
+.row-article .button-thumbnail {
+  cursor: pointer;
+}
+.row-article .swiper-button-next,
+.row-article .swiper-button-prev {
+  right: 10px;
+  padding: 30px;
+  display: none;
+  color: white;
+}
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+  .row-swiper .swiper-container {
+    width: 100%;
+    height: 800px;
+  }
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .row-swiper .swiper-slide .title {
+    font-size: 5.5vw;
+  }
+  .row-swiper .swiper-slide .text p {
+    font-size: 4.5vw;
+  }
+  .row-product .gallery-cell {
+    margin-bottom: 80px;
+  }
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .row-product .gallery-cell {
+    margin-bottom: 80px;
+  }
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/**
+ * ===============================================================
+ * Swiper - overlay
+ * ===============================================================
+ */
+.row-swiper {
+  position: relative;
+  /**
+     * Customise the arrow button.
+     * https://stackoverflow.com/questions/45381871/swiper-how-to-customise-arrow-buttons
+     */
+  /**
+     * Float the pagination to center.
+     */
+  /**
+     * Customise the pagination.
+     * https://github.com/nolimits4web/Swiper/blob/master/demos/070-pagination-custom.html
+     */
+}
+.row-swiper .swiper-container {
+  width: 100%;
+  height: 650px;
+  position: static;
+}
+.row-swiper.autoheight .swiper-container {
+  width: 100%;
+  height: auto;
+  position: static;
+}
+.row-swiper .swiper-slide {
+  font-size: 18px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.row-swiper .swiper-slide .title,
+.row-swiper .swiper-slide .text {
+  margin: 0;
+  text-align: left;
+}
+.row-swiper .swiper-slide .title {
+  font-family: 'Bellefair', serif;
+  font-size: 3.5vw;
+  font-weight: 700;
+}
+.row-swiper .swiper-slide .text p {
+  font-size: 30px;
+  font-weight: 300;
+}
+.row-swiper .slide-info-container {
+  color: #ffffff;
+}
+.row-swiper .swiper-button-next,
+.row-swiper .swiper-button-prev {
+  margin: 0;
+  padding: 0;
+  top: auto;
+  bottom: 20px;
+  right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.row-swiper .swiper-button-prev {
+  left: 0;
+}
+.row-swiper .swiper-button-prev i:hover {
+  color: #A0A0A0;
+}
+.row-swiper .swiper-button-next {
+  right: 0;
+}
+.row-swiper .swiper-button-next i:hover {
+  color: #A0A0A0;
+}
+.row-swiper .swiper-button-prev {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E") !important;
+}
+.row-swiper .swiper-button-next {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E") !important;
+}
+.row-swiper .container-pagination {
+  width: 100%;
+  height: 80px;
+}
+.row-swiper .container-pagination .swiper-pagination {
+  width: 100%;
+}
+.row-swiper .swiper-pagination-bullet {
+  margin-left: 5px;
+  margin-right: 5px;
+  background: #000000;
+}
+.row-swiper .swiper-pagination-bullet:hover {
+  color: #3B3B3B;
+}
+.row-swiper .swiper-pagination-bullet-active {
+  background: #19ADBC;
+}
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+  .row-swiper .swiper-container {
+    width: 100%;
+    height: 750px;
+  }
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+}
+/* XLarge only */
+@media screen and (min-width: 75em) and (max-width: 90.9375em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .row-swiper .swiper-container {
+    width: 100%;
+    height: 500px;
+  }
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .row-swiper .swiper-container {
+    width: 100%;
+    height: 400px;
+  }
+}
+/**
+ * ===============================================================
+ * Overlay
+ * ===============================================================
+ */
+.overlay-content {
+  position: fixed;
+  overflow-y: auto;
+  z-index: 1000001;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: none;
+}
+.overlay-content.is-open {
+  display: block;
+}
+.button-exit-reveal {
+  display: block;
+}
+.button-exit-reveal i {
+  font-size: 44px;
+  cursor: pointer;
+  color: #101010;
+  margin-right: -10px;
+}
+.button-exit-reveal i:hover {
+  color: #A0A0A0;
+}
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+}
+/* XLarge only */
+@media screen and (min-width: 75em) and (max-width: 90.9375em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+}
+/**
+ * ===============================================================
+ * Collections
+ * ===============================================================
+ */
+.nav-language.collections .menu {
+  list-style: none;
+}
+.nav-language.collections .menu li {
+  margin: 0;
+}
+.nav-language.collections .menu li a {
+  color: #3B3B3B;
+}
+.nav-language.collections .menu li a:hover {
+  color: #19ADBC;
+}
+.nav-language.collections .menu .current > a {
+  color: #19ADBC;
+  cursor: not-allowed;
+}
+.nav-language.collections .menu .current > a:hover {
+  color: #19ADBC;
+}
+.nav-language.collections .menu .divide-vertical {
+  color: #3B3B3B;
+  font-size: 16px;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: inline-block;
+}
+.row-background {
+  position: relative;
+  overflow: hidden;
+  height: 600px;
+  display: block;
+}
+.row-background.scale-background:hover {
+  cursor: pointer;
+}
+.row-background.scale-background:hover .swiper-slide-active .background {
+  opacity: 0.5;
+  transform: scale(1.025);
+}
+.row-background .background {
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  /**
+         * Transition for fading the image.
+         */
+  opacity: 1;
+  /**
+         * Transition for scaling the image.
+         */
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+.row-background .row-transparent {
+  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+}
+.row-background .row-transparent .featured-heading {
+  font-size: 20px;
+  margin-right: 20px;
+}
+.row-background .row-transparent .featured-category {
+  color: #A0A0A0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+}
+.row-background .row-transparent .flex-to-right {
+  justify-content: flex-end;
+}
+.row-background .row-transparent .flex-to-right .flex-child {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.row-background .swiper-container {
+  width: 100%;
+  height: 100%;
+  position: static;
+  z-index: -1;
+}
+.row-background .swiper-slide {
+  position: relative;
+}
+.row-background .row-nav2 {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+.row-description {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.row-description .container-text p {
+  font-size: 20px;
+  line-height: 24px;
+}
+.row-description .container-text.intro p {
+  font-size: 26px;
+  line-height: 30px;
+}
+.row-description .collection-heading {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+.row-description .collection-category {
+  color: #A0A0A0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+}
+.row-article.collection {
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+.row-article.collection .container-text {
+  margin-top: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.row-article .collection-heading {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+.row-article .collection-category {
+  color: #A0A0A0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+}
+.row-article .meta span {
+  display: block;
+  color: #A0A0A0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+}
+.row-divider.collection hr {
+  min-width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.nav-breadcrumbs ul {
+  margin: 0;
+  /* To remove default bottom margin */
+  padding: 0;
+  /* To remove default left padding */
+  list-style: none;
+  /**
+         * https://css-tricks.com/fighting-the-space-between-inline-block-elements/
+         */
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.nav-breadcrumbs li a {
+  color: #A0A0A0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+}
+.nav-breadcrumbs li a:hover {
+  color: #3B3B3B;
+}
+.nav-breadcrumbs li:not(:last-child):after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='24px' height='24px' viewBox='0 0 24 24' enable-background='new 0 0 24 24' xml:space='preserve'><path d='M8.59,16.59L13.17,12L8.59,7.41L10,6l6,6l-6,6L8.59,16.59z' fill='#A0A0A0'/><path fill='none' d='M0,0h24v24H0V0z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.nav-breadcrumbs .mi-arrow-right {
+  line-height: 10px;
+  font-size: 14px;
+  color: #A0A0A0;
+  font-weight: 700;
+}
+.row-related {
+  padding-top: 40px;
+}
+.row-related .heading-related {
+  color: #A0A0A0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+}
+.row-related .heading-related.fixed-for-large {
+  position: fixed;
+  top: 100px;
+}
+.article-excerpt {
+  color: #A0A0A0;
+  font-size: 16px;
+}
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+}
+/* XLarge only */
+@media screen and (min-width: 75em) and (max-width: 90.9375em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .heading-related {
+    margin-bottom: 40px;
+  }
+  .row-article.collection {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .row-article .container-text.small-padding {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .row-article .swiper-container {
+    height: 130px;
+  }
+  .row-article .swiper-container:first-child {
+    height: 500px;
+  }
+  .row-article .swiper-container.gallery-thumbs {
+    width: 95%;
+  }
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .row-description.small-only {
+    padding-top: 0;
+    padding-bottom: 30px;
+  }
+  .row-article.collection {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .row-article .container-text.small-padding {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .row-article .swiper-container.gallery-thumbs {
+    width: 92%;
+  }
+  .heading-related {
+    margin-bottom: 25px;
+  }
+}
+/**
+ * ===============================================================
+ * History
+ * ===============================================================
+ */
+.row-description .container-text .heading-history {
+  font-size: 40px;
+  line-height: 40px;
+  margin-bottom: 10px;
+}
+.row-description .container-text .tagline-history {
+  color: #A0A0A0;
+  font-size: 20px;
+}
+.container-image.narrow-width {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  position: relative;
+}
+.container-image .button-add {
+  position: absolute;
+  top: 0;
+  right: -30px;
+  color: #3B3B3B;
+}
+.container-image .button-add:hover {
+  color: #19ADBC;
+}
+.container-image .button-image {
+  -webkit-transition: 0.5s;
+  /* Safari */
+  transition: 0.5s;
+}
+.container-image .button-image:hover {
+  opacity: 0.6;
+}
+.list-block.for-article.for-history {
+  list-style: none;
+  margin-left: 0;
+}
+.list-block.for-article.for-history li {
+  margin-bottom: 10px;
+}
+.list-block.for-article.for-history li a {
+  color: #3B3B3B;
+  display: block;
+  position: relative;
+  padding-left: 30px;
+}
+.list-block.for-article.for-history li a i {
+  color: #A0A0A0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.list-block.for-article.for-history li a:hover {
+  color: #19ADBC !important;
+}
+.list-block.for-article.for-history li a:hover i {
+  color: #19ADBC;
+}
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+}
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+}
+/* XLarge only */
+@media screen and (min-width: 75em) and (max-width: 90.9375em) {
+}
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .row-description.collapse-padding-for-small-only {
+    padding-top: 0;
+    padding-bottom: 30px;
+  }
+  .row-description .container-text .heading-history {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  .row-description .container-text .tagline-history {
+    font-size: 20px;
+  }
+  .row-heading.history {
+    padding-top: 0;
+  }
+}
+/**
+ * ===============================================================
+ * Customise Foundation font path.
+ * ===============================================================
+ */
+@font-face {
+  font-family: "foundation-icons";
+  src: url("fonts/foundation-icons.eot");
+  src: url("fonts/foundation-icons.eot?#iefix") format("embedded-opentype"), url("fonts/foundation-icons.woff") format("woff"), url("fonts/foundation-icons.ttf") format("truetype"), url("fonts/foundation-icons.svg#fontcustom") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/**
+ * ===============================================================
+ * Material Icons
+ * ===============================================================
+ */
+.material-icons {
+  /**
+     * To fix material icon not align with text.
+     * https://github.com/google/material-design-icons/issues/206
+     */
+  vertical-align: middle;
+  padding: 0;
+  margin: 0;
+}
+.material-icons.large {
+  font-size: 32px;
+}
+.material-icons.small {
+  font-size: 18px;
+}
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/MaterialIcons-Regular.eot');
+  /* For IE6-8 */
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url('fonts/MaterialIcons-Regular.woff2') format('woff2'), url('fonts/MaterialIcons-Regular.woff') format('woff'), url('fonts/MaterialIcons-Regular.ttf') format('truetype');
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+.material-icons.md-80 {
+  font-size: 80px;
+  line-height: 20px;
+}
+/**
+ * ===============================================================
+ * Customise jQuery ui font path.
+ * ===============================================================
+ */
+.ui-icon,
+.ui-widget-content .ui-icon {
+  background-image: url("images/ui-icons_444444_256x240.png");
+}
+.ui-widget-header .ui-icon {
+  background-image: url("images/ui-icons_444444_256x240.png");
+}
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon,
+.ui-button:hover .ui-icon,
+.ui-button:focus .ui-icon {
+  background-image: url("images/ui-icons_555555_256x240.png");
+}
+.ui-state-active .ui-icon,
+.ui-button:active .ui-icon {
+  background-image: url("images/ui-icons_ffffff_256x240.png");
+}
+.ui-state-highlight .ui-icon,
+.ui-button .ui-state-highlight.ui-icon {
+  background-image: url("images/ui-icons_777620_256x240.png");
+}
+.ui-state-error .ui-icon,
+.ui-state-error-text .ui-icon {
+  background-image: url("images/ui-icons_cc0000_256x240.png");
+}
+.ui-button .ui-icon {
+  background-image: url("images/ui-icons_777777_256x240.png");
+}
+/**
+ * ===============================================================
+ * Spinner
+ * ===============================================================
+ *
+ * http://tobiasahlin.com/spinkit/
+ */
+.row-spinner {
+  margin-bottom: 50px;
+}
+.container-spinner {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.sk-circle {
+  margin: 50px auto;
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.sk-circle .sk-child {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.sk-circle .sk-child:before {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 15%;
+  height: 15%;
+  background-color: #A0A0A0;
+  border-radius: 100%;
+  -webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
+  animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
+}
+.sk-circle .sk-circle2 {
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+.sk-circle .sk-circle3 {
+  -webkit-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+.sk-circle .sk-circle4 {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.sk-circle .sk-circle5 {
+  -webkit-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+.sk-circle .sk-circle6 {
+  -webkit-transform: rotate(150deg);
+  -ms-transform: rotate(150deg);
+  transform: rotate(150deg);
+}
+.sk-circle .sk-circle7 {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.sk-circle .sk-circle8 {
+  -webkit-transform: rotate(210deg);
+  -ms-transform: rotate(210deg);
+  transform: rotate(210deg);
+}
+.sk-circle .sk-circle9 {
+  -webkit-transform: rotate(240deg);
+  -ms-transform: rotate(240deg);
+  transform: rotate(240deg);
+}
+.sk-circle .sk-circle10 {
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+.sk-circle .sk-circle11 {
+  -webkit-transform: rotate(300deg);
+  -ms-transform: rotate(300deg);
+  transform: rotate(300deg);
+}
+.sk-circle .sk-circle12 {
+  -webkit-transform: rotate(330deg);
+  -ms-transform: rotate(330deg);
+  transform: rotate(330deg);
+}
+.sk-circle .sk-circle2:before {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+.sk-circle .sk-circle3:before {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+.sk-circle .sk-circle4:before {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+.sk-circle .sk-circle5:before {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+.sk-circle .sk-circle6:before {
+  -webkit-animation-delay: -0.7s;
+  animation-delay: -0.7s;
+}
+.sk-circle .sk-circle7:before {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+}
+.sk-circle .sk-circle8:before {
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+.sk-circle .sk-circle9:before {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s;
+}
+.sk-circle .sk-circle10:before {
+  -webkit-animation-delay: -0.3s;
+  animation-delay: -0.3s;
+}
+.sk-circle .sk-circle11:before {
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s;
+}
+.sk-circle .sk-circle12:before {
+  -webkit-animation-delay: -0.1s;
+  animation-delay: -0.1s;
+}
+@-webkit-keyframes sk-circleBounceDelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes sk-circleBounceDelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+/*# sourceMappingURL=maps/master.css.map */
